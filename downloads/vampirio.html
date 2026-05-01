@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Vampirio - CosmicGemLogistic</title>
+    <style>
+        body { background-color: #050505; color: #00ffcc; font-family: monospace; text-align: center; padding-top: 15vh; }
+        h1 { color: #555555; text-shadow: 0 0 5px #7a0000; }
+        .btn-siniestro { background-color: #1a0000; color: #ff3333; border: 2px solid #7a0000; padding: 20px 40px; font-size: 20px; cursor: pointer; border-radius: 4px; font-weight: bold; }
+        #radar { margin-top: 30px; font-size: 18px; color: #ff5555; }
+    </style>
+</head>
+<body>
+    <h1>[ NÚCLEO VAMPIRIO ALPHA ]</h1>
+    <p>Soberanía Técnica Activa - Protegiendo Family Vault</p>
+    <button class="btn-siniestro" onclick="iniciarBiometria()">INICIAR ESCÁNER BIOMÉTRICO</button>
+    <div id="radar">Esperando autorización física...</div>
+    <script>
+        async function iniciarBiometria() {
+            const radar = document.getElementById('radar');
+            radar.innerText = "Conectando hardware del convoy...";
+            const opcionesSiniestras = {
+                challenge: Uint8Array.from("cgl-family-vault", c => c.charCodeAt(0)),
+                rp: { name: "CosmicGemLogistic", id: window.location.hostname || "localhost" },
+                user: { id: Uint8Array.from("alpha", c => c.charCodeAt(0)), name: "men@cgl", displayName: "Operador Alpha" },
+                pubKeyCredParams: [{alg: -7, type: "public-key"}],
+                authenticatorSelection: { authenticatorAttachment: "platform", userVerification: "required" },
+                timeout: 60000
+            };
+            try {
+                const credencial = await navigator.credentials.create({ publicKey: opcionesSiniestras });
+                radar.innerText = "[+] ACCESO CONCEDIDO: Huella sellada lista para el Vault.";
+                radar.style.color = "#00ffcc";
+            } catch (error) {
+                radar.innerText = "[-] BLOQUEO ABSOLUTO: " + error.message;
+            }
+        }
+    </script>
+</body>
+</html>

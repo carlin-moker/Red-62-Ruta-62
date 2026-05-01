@@ -1,0 +1,109 @@
+0 verbose cli /data/data/com.termux/files/usr/bin/node /data/data/com.termux/files/usr/bin/npm
+1 info using npm@11.12.1
+2 info using node@v25.8.2
+3 silly config load:file:/data/data/com.termux/files/usr/lib/node_modules/npm/npmrc
+4 silly config load:file:/data/data/com.termux/files/home/Cosmicjuan-Core/.npmrc
+5 silly config load:file:/data/data/com.termux/files/home/.npmrc
+6 silly config load:file:/data/data/com.termux/files/usr/etc/npmrc
+7 verbose title npm install
+8 verbose argv "install"
+9 verbose logfile logs-max:10 dir:/data/data/com.termux/files/home/.npm/_logs/2026-04-26T02_32_05_641Z-
+10 verbose logfile /data/data/com.termux/files/home/.npm/_logs/2026-04-26T02_32_05_641Z-debug-0.log
+11 silly logfile start cleaning logs, removing 1 files
+12 silly packumentCache heap:1174405120 maxSize:293601280 maxEntrySize:146800640
+13 silly logfile done cleaning log files
+14 silly idealTree buildDeps
+15 silly reify moves {}
+16 silly audit bulk request {
+16 silly audit   '@esbuild/aix-ppc64': [ '0.27.7' ],
+16 silly audit   '@esbuild/android-arm': [ '0.27.7' ],
+16 silly audit   '@esbuild/android-arm64': [ '0.27.7' ],
+16 silly audit   '@esbuild/android-x64': [ '0.27.7' ],
+16 silly audit   '@esbuild/darwin-arm64': [ '0.27.7' ],
+16 silly audit   '@esbuild/darwin-x64': [ '0.27.7' ],
+16 silly audit   '@esbuild/freebsd-arm64': [ '0.27.7' ],
+16 silly audit   '@esbuild/freebsd-x64': [ '0.27.7' ],
+16 silly audit   '@esbuild/linux-arm': [ '0.27.7' ],
+16 silly audit   '@esbuild/linux-arm64': [ '0.27.7' ],
+16 silly audit   '@esbuild/linux-ia32': [ '0.27.7' ],
+16 silly audit   '@esbuild/linux-loong64': [ '0.27.7' ],
+16 silly audit   '@esbuild/linux-mips64el': [ '0.27.7' ],
+16 silly audit   '@esbuild/linux-ppc64': [ '0.27.7' ],
+16 silly audit   '@esbuild/linux-riscv64': [ '0.27.7' ],
+16 silly audit   '@esbuild/linux-s390x': [ '0.27.7' ],
+16 silly audit   '@esbuild/linux-x64': [ '0.27.7' ],
+16 silly audit   '@esbuild/netbsd-arm64': [ '0.27.7' ],
+16 silly audit   '@esbuild/netbsd-x64': [ '0.27.7' ],
+16 silly audit   '@esbuild/openbsd-arm64': [ '0.27.7' ],
+16 silly audit   '@esbuild/openbsd-x64': [ '0.27.7' ],
+16 silly audit   '@esbuild/openharmony-arm64': [ '0.27.7' ],
+16 silly audit   '@esbuild/sunos-x64': [ '0.27.7' ],
+16 silly audit   '@esbuild/win32-arm64': [ '0.27.7' ],
+16 silly audit   '@esbuild/win32-ia32': [ '0.27.7' ],
+16 silly audit   '@esbuild/win32-x64': [ '0.27.7' ],
+16 silly audit   '@noble/curves': [ '1.4.2', '1.8.2' ],
+16 silly audit   '@noble/hashes': [ '1.4.0', '1.7.2' ],
+16 silly audit   '@nomicfoundation/edr': [ '0.12.0-next.29' ],
+16 silly audit   '@nomicfoundation/edr-darwin-arm64': [ '0.12.0-next.29' ],
+16 silly audit   '@nomicfoundation/edr-darwin-x64': [ '0.12.0-next.29' ],
+16 silly audit   '@nomicfoundation/edr-linux-arm64-gnu': [ '0.12.0-next.29' ],
+16 silly audit   '@nomicfoundation/edr-linux-arm64-musl': [ '0.12.0-next.29' ],
+16 silly audit   '@nomicfoundation/edr-linux-x64-gnu': [ '0.12.0-next.29' ],
+16 silly audit   '@nomicfoundation/edr-linux-x64-musl': [ '0.12.0-next.29' ],
+16 silly audit   '@nomicfoundation/edr-win32-x64-msvc': [ '0.12.0-next.29' ],
+16 silly audit   '@nomicfoundation/hardhat-errors': [ '3.0.10' ],
+16 silly audit   '@nomicfoundation/hardhat-utils': [ '4.0.2' ],
+16 silly audit   '@nomicfoundation/hardhat-vendored': [ '3.0.1' ],
+16 silly audit   '@nomicfoundation/hardhat-zod-utils': [ '3.0.3' ],
+16 silly audit   '@nomicfoundation/solidity-analyzer': [ '0.1.2' ],
+16 silly audit   '@nomicfoundation/solidity-analyzer-darwin-arm64': [ '0.1.2' ],
+16 silly audit   '@nomicfoundation/solidity-analyzer-darwin-x64': [ '0.1.2' ],
+16 silly audit   '@nomicfoundation/solidity-analyzer-linux-arm64-gnu': [ '0.1.2' ],
+16 silly audit   '@nomicfoundation/solidity-analyzer-linux-arm64-musl': [ '0.1.2' ],
+16 silly audit   '@nomicfoundation/solidity-analyzer-linux-x64-gnu': [ '0.1.2' ],
+16 silly audit   '@nomicfoundation/solidity-analyzer-linux-x64-musl': [ '0.1.2' ],
+16 silly audit   '@nomicfoundation/solidity-analyzer-win32-x64-msvc': [ '0.1.2' ],
+16 silly audit   '@scure/base': [ '1.1.9', '1.2.6' ],
+16 silly audit   '@scure/bip32': [ '1.4.0' ],
+16 silly audit   '@scure/bip39': [ '1.3.0' ],
+16 silly audit   '@sentry/core': [ '9.47.1' ],
+16 silly audit   '@streamparser/json': [ '0.0.22' ],
+16 silly audit   '@streamparser/json-node': [ '0.0.22' ],
+16 silly audit   'adm-zip': [ '0.4.16' ],
+16 silly audit   'ansi-colors': [ '4.1.3' ],
+16 silly audit   'ansi-regex': [ '5.0.1' ],
+16 silly audit   chalk: [ '5.6.2' ],
+16 silly audit   chokidar: [ '4.0.3' ],
+16 silly audit   debug: [ '4.4.3' ],
+16 silly audit   enquirer: [ '2.4.1' ],
+16 silly audit   'env-paths': [ '2.2.1' ],
+16 silly audit   esbuild: [ '0.27.7' ],
+16 silly audit   'ethereum-cryptography': [ '2.2.1' ],
+16 silly audit   'fast-equals': [ '5.4.0' ],
+16 silly audit   fsevents: [ '2.3.3' ],
+16 silly audit   'get-tsconfig': [ '4.13.7' ],
+16 silly audit   hardhat: [ '3.3.0' ],
+16 silly audit   'json-stream-stringify': [ '3.1.6' ],
+16 silly audit   'micro-eth-signer': [ '0.14.0' ],
+16 silly audit   'micro-packed': [ '0.7.3' ],
+16 silly audit   ms: [ '2.1.3' ],
+16 silly audit   'p-map': [ '7.0.4' ],
+16 silly audit   readdirp: [ '4.1.2' ],
+16 silly audit   'resolve-pkg-maps': [ '1.0.0' ],
+16 silly audit   'resolve.exports': [ '2.0.3' ],
+16 silly audit   rfdc: [ '1.4.1' ],
+16 silly audit   semver: [ '7.7.4' ],
+16 silly audit   'strip-ansi': [ '6.0.1' ],
+16 silly audit   tsx: [ '4.21.0' ],
+16 silly audit   undici: [ '6.25.0' ],
+16 silly audit   ws: [ '8.20.0' ],
+16 silly audit   zod: [ '3.25.76' ]
+16 silly audit }
+17 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 1256ms
+18 silly audit report {}
+19 verbose cwd /data/data/com.termux/files/home/Cosmicjuan-Core
+20 verbose os Linux 6.12.23-android16-5-abA165MUBS8CZB4-4k
+21 verbose node v25.8.2
+22 verbose npm  v11.12.1
+23 verbose exit 0
+24 info ok

@@ -1,0 +1,28 @@
+{
+  "name": "red-62-ruta-62",
+  "version": "1.0.0",
+  "description": "Infraestructura soberana de Cosmicjuan.blockchain",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "node:start": "node src/node/nodeServer.js",
+    "node:bootstrap": "node scripts/bootstrap.js",
+    "wallet:init": "node scripts/initWallet.js",
+    "contract:deploy": "hardhat run scripts/deploy.js --network base"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "chalk": "^5.3.0",
+    "discord.js": "^14.26.3",
+    "dotenv": "^16.6.1",
+    "ethers": "^6.16.0",
+    "express": "^4.18.2",
+    "uuid": "^9.0.0",
+    "ws": "^8.14.0"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^7.0.0",
+    "hardhat": "^3.3.0"
+  }
+}

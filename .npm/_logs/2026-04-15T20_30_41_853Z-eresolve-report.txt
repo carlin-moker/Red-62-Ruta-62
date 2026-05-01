@@ -1,0 +1,18 @@
+'Log files:
+/data/data/com.termux/files/home/.npm/_logs/2026-04-15T20_30_41_853Z-debug-0.log
+
+# npm resolution error report
+
+While resolving: cosmicjuan@1.0.0
+Found: @nomicfoundation/hardhat-ethers@4.0.7
+node_modules/@nomicfoundation/hardhat-ethers
+  dev @nomicfoundation/hardhat-ethers@"^4.0.7" from the root project
+
+Could not resolve dependency:
+peer @nomicfoundation/hardhat-ethers@"^3.1.0" from @nomicfoundation/hardhat-chai-matchers@2.1.2
+node_modules/@nomicfoundation/hardhat-chai-matchers
+  peer @nomicfoundation/hardhat-chai-matchers@"^2.1.0" from @nomicfoundation/hardhat-toolbox@6.1.2
+  node_modules/@nomicfoundation/hardhat-toolbox
+    dev @nomicfoundation/hardhat-toolbox@"^6.1.2" from the root project
+
+Fix the upstream dependency conflict, or retry this command with --force or --legacy-peer-deps to accept an incorrect (and potentially broken) dependency resolution.

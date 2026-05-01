@@ -1,0 +1,8 @@
+[user]
+	signingkey = BC4A5D704CC5D513
+	name = Carlin-Moker
+	email = carlinmoker@gmail.com
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg

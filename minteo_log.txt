@@ -1,0 +1,9 @@
+nohup: ignoring input
+🚀 INICIANDO PROTOCOLO DE MINTEO MASIVO - RED 62
+💎 Minteando amount FORTUNAMEN a: address
+✅ Confirmado en bloque para: addres...
+💎 Minteando 2500000000 FORTUNAMEN a: 0x308112D06027Cd838627b94dDFC16ea6B4D90004
+✅ Confirmado en bloque para: 0x3081...
+💎 Minteando 2500000000 FORTUNAMEN a: 0x187c7B0393eBE86378128f2653D0930E33218899
+✅ Confirmado en bloque para: 0x187c...
+🏁 OPERACIÓN COMPLETADA CON ÉXITO
