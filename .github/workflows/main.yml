@@ -1,0 +1,30 @@
+name: Red 62 - Validación de Infraestructura
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del Repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Instalar Dependencias (Limpieza de Red)
+        run: npm ci
+
+      - name: Compilación de Contratos (Sello de Oro)
+        run: npx hardhat compile
+
+      - name: Ejecutar Pruebas de Lógica Matemática
+        run: npx hardhat test
