@@ -49,3 +49,4 @@ build/
 *.pem
 secrets/
 credentials/
+.env
