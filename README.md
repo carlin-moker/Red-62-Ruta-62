@@ -29,8 +29,3 @@ async function main() {
     console.log("CosmicRoute desplegado en:", cosmicRoute.address);
     console.log("Estado: OPERATIVO - Operador: carlin-moker");
 }
-
-main().catch((error) => {
-    console.error(error);
-    process.exitCode = 1;
-});
