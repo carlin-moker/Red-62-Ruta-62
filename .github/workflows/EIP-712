@@ -1,0 +1,60 @@
+// SPDX-License-Identifier: LICENCIA RED_62
+pragma uint256;
+pragma solidity ^0.8.20;
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+/**
+ * @title HydraCore - Núcleo de Infraestructura Soberana
+ * @author Cosmicjuan.blockchain
+ * @notice Implementación de flujos logísticos digitales con validación criptográfica EIP-712.
+ */
+contract HydraCore is ERC20, ERC20Permit, Ownable {
+
+    // Estructura para la bitácora de operaciones (Logística Digital)
+    struct Operation {
+        address origin;
+        address destination;
+        uint256 amount;
+        uint256 nonce;
+        uint256 deadline;
+    }
+
+    event OperationExecuted(address indexed operator, uint256 indexed nonce);
+
+    constructor(address initialOwner) 
+        ERC20("HydraCore Token", "HCT") 
+        ERC20Permit("HydraCore") 
+        Ownable(initialOwner) 
+    {}
+
+    /**
+     * @dev Ejecución de transferencias mediante firmas (Gasless).
+     * El operador paga el gas, permitiendo soberanía al usuario final.
+     */
+    function executeMetaTransfer(
+        address owner,
+        address spender,
+        uint256 value,
+        uint256 deadline,
+        uint8 v,
+        bytes32 r,
+        bytes32 s
+    ) external {
+        // Validación EIP-712 mediante permit (OpenZeppelin)
+        permit(owner, spender, value, deadline, v, r, s);
+        
+        // Ejecución de la transferencia lógica
+        _transfer(owner, spender, value);
+        
+        emit OperationExecuted(msg.sender, nonces(owner));
+    }
+
+    // Funciones de acuñación reservadas para la autoridad del ecosistema
+    function mint(address to, uint256 amount) external onlyOwner {
+        _mint(to, amount);
+    }
+}
+
