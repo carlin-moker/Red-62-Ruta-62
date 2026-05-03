@@ -1,30 +1,56 @@
-'use strict';
+import dotenv from 'dotenv';
+import { ethers } from 'ethers';
+import fs from 'fs';
+import readline from 'readline';
+import chalk from 'chalk';
 
-const { Wallet, Contract, NodeOperator } = require('your-library'); // replace with actual library imports
+dotenv.config();
 
-async function initWallet() {
-    try {
-        // Step 1: Generate or import wallet
-        const wallet = await Wallet.generateOrImport('your-wallet-credentials');
-        console.log("Wallet initialized.");
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
 
-        // Step 2: Initialize operator account on Red-62 network
-        const operatorAccount = await wallet.initOperatorAccount('Red-62');
-        console.log("Operator account initialized on Red-62.");
+const question = (query) => new Promise((resolve) => rl.question(query, resolve));
 
-        // Step 3: Deploy contracts
-        const contract = await Contract.deploy('contractData', operatorAccount);
-        console.log("Contracts deployed.");
-
-        // Step 4: Register node as operator
-        const nodeOperator = new NodeOperator(contract);
-        await nodeOperator.register();
-        console.log("Node registered as operator.");
-
-    } catch (error) {
-        console.error("Error initializing wallet:", error);
+async function initializeWalletSystem() {
+  console.log(chalk.blue('\n🌌 Inicializando sistema de cartera Red-62...'));
+  
+  try {
+    if (!fs.existsSync('./data/wallet')) {
+      fs.mkdirSync('./data/wallet', { recursive: true });
     }
+
+    console.log(chalk.yellow('\n📋 Opciones:'));
+    console.log('1. Generar nueva cartera');
+    console.log('2. Restaurar desde mnemonic');
+    
+    const choice = await question('\n¿Qué deseas hacer? (1-2): ');
+
+    let wallet;
+    if (choice === '1') {
+      wallet = ethers.Wallet.createRandom();
+      console.log(chalk.green('\n✅ Nueva cartera generada.'));
+      console.log(chalk.red('⚠️  GUARDA ESTA MNEMONIC EN LUGAR SEGURO:'));
+      console.log(chalk.white(wallet.mnemonic.phrase));
+    } else {
+      const phrase = await question('\nIngresa tu mnemonic:\n> ');
+      wallet = ethers.Wallet.fromPhrase(phrase);
+      console.log(chalk.green('\n✅ Cartera restaurada.'));
+    }
+
+    const password = await question('\nIngresa contraseña para encriptar la cartera:\n> ');
+    const encryptedJson = await wallet.encrypt(password);
+    
+    fs.writeFileSync('./data/wallet/operator-wallet.json', encryptedJson);
+    console.log(chalk.green('\n✅ Cartera encriptada y guardada en ./data/wallet/operator-wallet.json'));
+    console.log(chalk.blue('📍 Address: ') + wallet.address);
+
+    rl.close();
+  } catch (error) {
+    console.error(chalk.red('\n❌ Error:'), error.message);
+    rl.close();
+  }
 }
 
-// Execute the wallet initialization
-initWallet();
+initializeWalletSystem();
