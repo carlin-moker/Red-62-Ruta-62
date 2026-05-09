@@ -1,0 +1,8 @@
+{
+  "Network": {
+    "slashingEnabled": false,
+    "slashingRate": 0.05,
+    "peerThreshold": 0.5,
+    "ddosProtection": true
+  }
+}
