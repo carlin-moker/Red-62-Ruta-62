@@ -2,8 +2,7 @@
  * ECOSISTEMA COSMICJUAN.BLOCKCHAIN - NÚCLEO RED 62
  * Protocolo de Infraestructura Soberana y Despliegue Evolutivo
  * Propiedad Prohibida - Protección Divina Activa
- */
-
+   {
 const { ethers } = require("hardhat");
 
 async function main() {
