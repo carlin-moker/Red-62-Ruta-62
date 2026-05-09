@@ -1,9 +1,15 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: PROPIEDAD-PROHIBIDA-COSMICJUAN-BLOCKCHAIN
+pragma solidity ^0.8.20;
 
-pragma solidity ^0.8.0;
-
+/**
+ * @title Red62SovereignCore
+ * @dev Autonomous rational logic for Cosmicjuan.blockchain.
+ * @author Carlin-Moker
+ * @custom:security Propiedad Prohibida - All Rights Reserved
+ */
 contract Red62Node {
-    // Structure for Operator registration
+    address public immutable MAGNATE;
+
     struct Operator {
         address operatorAddress;
         string operatorName;
@@ -13,43 +19,53 @@ contract Red62Node {
     mapping(address => Operator) private operators;
     address[] private operatorList;
 
-    // State of the Red62Node
     enum NodeState { Active, Inactive, Maintenance }
     NodeState public currentState;
 
-    // Event declarations
-    event OperatorRegistered(address operator);
+    event OperatorRegistered(address indexed operator);
     event StateChanged(NodeState newState);
 
-    // Constructor to initialize the contract state
+    modifier soloMagnate() {
+        require(msg.sender == MAGNATE, "Error: Solo el Magnate tiene el mando");
+        _;
+    }
+
     constructor() {
+        MAGNATE = msg.sender;
         currentState = NodeState.Active;
     }
 
-    // Function to register an operator
-    function registerOperator(string memory name) public {
+    /**
+     * @dev Registra un operador bajo la supervisión del Magnate.
+     */
+    function registerOperator(string memory name) public soloMagnate {
         require(!operators[msg.sender].isRegistered, "Operator already registered");
+        
         operators[msg.sender] = Operator(msg.sender, name, true);
         operatorList.push(msg.sender);
+        
         emit OperatorRegistered(msg.sender);
     }
 
-    // Function to change the state of the node
-    function setState(NodeState newState) public {
-        // Only registered operators can change the state
-        require(operators[msg.sender].isRegistered, "Caller is not a registered operator");
+    /**
+     * @dev Cambia el estado del nodo según la lógica racional autónoma.
+     */
+    function setState(NodeState newState) public soloMagnate {
         currentState = newState;
         emit StateChanged(newState);
     }
 
-    // Function to get operator details
+    /**
+     * @dev Obtiene detalles del operador para la bitácora de la Red 62.
+     */
     function getOperator(address operatorAddress) public view returns (Operator memory) {
         return operators[operatorAddress];
     }
 
-    // Integration with HydraCore protocol
-    // (Placeholder for actual integration functions)
-    function integrateWithHydraCore() public {
-        // Integration logic goes here
+    /**
+     * @dev Integración con el protocolo HydraCore para soberanía técnica.
+     */
+    function integrateWithHydraCore() public soloMagnate {
+        // Lógica de integración cuántico-racional va aquí
     }
 }
