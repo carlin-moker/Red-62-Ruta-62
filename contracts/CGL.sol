@@ -1,13 +1,14 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: PROPIEDAD-PROHIBIDA-ALL-RIGHTS-RESERVED
 pragma solidity ^0.8.20;
 
 /**
  * @title CosmicGemLogistic
- * @dev Núcleo de control para Red 62.
+ * @dev Núcleo de control soberano para Red 62.
+ * @author Carlin-Moker
  */
 contract CosmicGemLogistic {
     address public immutable MAGNATE;
-    uint256 public slashingRate; 
+    uint256 public slashingRate;
     bool public ddosProtected;
 
     struct Carga {
@@ -19,7 +20,7 @@ contract CosmicGemLogistic {
 
     mapping(uint256 => Carga) public bitacora;
 
-    event CargaRegistrada(uint256 id, string ruta);
+    event CargaRegistrada(uint256 indexed id, string ruta);
     event AlertaSeguridad(string motivo, uint256 timestamp);
 
     modifier soloMagnate() {
@@ -33,11 +34,17 @@ contract CosmicGemLogistic {
         ddosProtected = _ddosProtected;
     }
 
+    /**
+     * @dev Registra un viaje en la bitacora de la Red 62.
+     */
     function registrarViaje(uint256 _id, string memory _ruta, uint256 _peso) public soloMagnate {
         bitacora[_id] = Carga(_id, _ruta, _peso, false);
         emit CargaRegistrada(_id, _ruta);
     }
 
+    /**
+     * @dev Activa los protocolos de penalizacion segun el sistema criptofisicomatematico.
+     */
     function activarSlashing() public soloMagnate {
         emit AlertaSeguridad("Penalizacion aplicada segun protocolo Red 62", block.timestamp);
     }
