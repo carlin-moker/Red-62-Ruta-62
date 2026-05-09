@@ -1,4 +1,5 @@
-[![Red 62 - Validacion de Infraestructura](https://github.com/carlin-moker/hydraCore.sol/actions/workflows/main.yml/badge.svg)](https://github.com/carlin-moker/hydraCore.sol/actions/workflows/main.yml)/**
+[![Red 62 - Validacion de Infraestructura](https://github.com/carlin-moker/hydraCore.sol/actions/workflows/main.yml/badge.svg)](https://github.com/carlin-moker/hydraCore.sol/actions/workflows/main.yml)
+}
  * ECOSISTEMA COSMICJUAN.BLOCKCHAIN - NÚCLEO RED 62
  * Protocolo de Infraestructura Soberana y Despliegue Evolutivo
  * Propiedad Prohibida - Protección Divina Activa
