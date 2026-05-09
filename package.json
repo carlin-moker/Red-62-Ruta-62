@@ -1,12 +1,17 @@
 {
-  "name": "red-62-cosmicgem",
+  "name": "cosmicjuan-blockchain-red62",
   "version": "1.0.0",
-  "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
-    "hardhat": "^2.22.0"
+  "description": "Núcleo de Infraestructura Soberana - Red 62",
+  "main": "index.js",
+  "scripts": {
+    "test": "hardhat test",
+    "deploy": "hardhat run scripts/deploy.js"
   },
+  "author": "Carlin-Moker",
+  "license": "Propiedad Prohibida",
   "dependencies": {
-    "@openzeppelin/contracts": "^5.0.0"
+    "hardhat": "^2.22.0",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "ethers": "^6.12.0"
   }
 }
-
