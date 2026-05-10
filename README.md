@@ -20,8 +20,7 @@ const { ethers } = require("hardhat");
 
 async function main() {
     console.log("Iniciando despliegue de infraestructura soberana...");
-
-    // 1. Desplegar CosmicRoute (Intercambio sin gas)
+    1. Desplegar CosmicRoute (Intercambio sin gas)
     const CosmicRoute = await ethers.getContractFactory("CosmicRoute");
     const cosmicRoute = await CosmicRoute.deploy();
     await cosmicRoute.deployed();
