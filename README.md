@@ -1,30 +1,49 @@
-# Red 62 - Infraestructura Blockchain Soberana
+// SPDX-License-Identifier: PROPIEDAD_PROHIBIDA
+// Script de Despliegue Soberano - Red 62 / Cosmicjuan.blockchain
+// Optimización Criptofisicomatemática para Fusión Total
 
-"Eres un Arquitecto de Infraestructura Blockchain Soberana. Sigue el marco de trabajo de la Red 62 y los patrones de CosmicGemLogistic hasta completar el despliegue de contratos inteligentes. Evita el uso de librerías externas que no sean OpenZeppelin y prioriza siempre la seguridad de firmas EIP-712 y la lógica de metatransacciones sin gas."
-
-## Pilares del Ecosistema
-* **Identidad Técnica:** Operación bajo soberanía digital absoluta.
-* **Seguridad:** Integridad garantizada mediante estándares de OpenZeppelin.
-* **Criptografía:** Implementación estricta de firmas estructuradas EIP-712.
-* **Logística Digital:** Escalabilidad mediante metatransacciones (gasless) para optimización de flujo.
-
-## Protocolo de Despliegue
-1. Validar lógica matemática en entornos controlados.
-2. Asegurar la compatibilidad con el ecosistema CosmicGemLogistic.
-3. Ejecutar despliegue soberano sin dependencias externas innecesarias.
-
----
-*Propiedad del Ecosistema Red 62 / Cosmicjuan.blockchain*
-// Script de Despliegue para Red 62 - CosmicGemLogistic
 const { ethers } = require("hardhat");
 
 async function main() {
-    console.log("Iniciando despliegue de infraestructura soberana...");
-    1. Desplegar CosmicRoute (Intercambio sin gas)
-    const CosmicRoute = await ethers.getContractFactory("CosmicRoute");
-    const cosmicRoute = await CosmicRoute.deploy();
-    await cosmicRoute.deployed();
+    const [deployer] = await ethers.getSigners();
 
-    console.log("CosmicRoute desplegado en:", cosmicRoute.address);
+    console.log("====================================================");
+    console.log("INICIANDO DESPLIEGUE DE INFRAESTRUCTURA SOBERANA");
+    console.log("Desplegando con la cuenta:", deployer.address);
+    console.log("====================================================");
+
+    // 1. Desplegar CosmicRouteQuantumAlpha (Intercambio sin gas + Vault)
+    // Este contrato actúa como el núcleo de liquidez y certificación
+    console.log("1. Desplegando CosmicRouteQuantumAlpha...");
+    const CosmicRoute = await ethers.getContractFactory("CosmicRouteQuantumAlpha");
+    const cosmicRoute = await CosmicRoute.deploy();
+    await cosmicRoute.waitForDeployment(); // Corrección para versiones recientes de ethers
+
+    const cosmicRouteAddress = await cosmicRoute.getAddress();
+    console.log("✅ CosmicRoute desplegado en:", cosmicRouteAddress);
     console.log("Estado: OPERATIVO - Operador: carlin-moker");
- 
+
+    // 2. Desplegar CosmicHydraQuantumNFT (Legado y Activos)
+    // Integra la lógica de las 34 Morenas y el blindaje de activos
+    console.log("\n2. Desplegando CosmicHydraQuantumNFT...");
+    const HydraNFT = await ethers.getContractFactory("CosmicHydraQuantumNFT");
+    const hydraNFT = await HydraNFT.deploy();
+    await hydraNFT.waitForDeployment();
+
+    const hydraNFTAddress = await hydraNFT.getAddress();
+    console.log("✅ HydraNFT desplegado en:", hydraNFTAddress);
+    console.log("Estado: OPERATIVO - Frecuencia: Red 62");
+
+    console.log("\n====================================================");
+    console.log("FUSIÓN COMPLETADA EXITOSAMENTE");
+    console.log("Infraestructura lista para protección del linaje.");
+    console.log("====================================================");
+}
+
+main()
+    .then(() => process.exit(0))
+    .catch((error) => {
+        console.error("\n❌ Error en el despliegue:");
+        console.error(error);
+        process.exit(1);
+    });
