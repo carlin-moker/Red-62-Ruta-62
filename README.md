@@ -1,49 +1,37 @@
 // SPDX-License-Identifier: PROPIEDAD_PROHIBIDA
-// Script de Despliegue Soberano - Red 62 / Cosmicjuan.blockchain
-// Optimización Criptofisicomatemática para Fusión Total
+// Cosmicjuan.blockchain - Infraestructura Red 62
+// Optimización Criptofisicomatemática - Fusión Total
 
 const { ethers } = require("hardhat");
 
 async function main() {
+    console.log("--------------------------------------------------");
+    console.log("Iniciando despliegue de infraestructura soberana...");
+    console.log("--------------------------------------------------");
+
     const [deployer] = await ethers.getSigners();
+    console.log("Desplegando con Operador Alpha:", deployer.address);
 
-    console.log("====================================================");
-    console.log("INICIANDO DESPLIEGUE DE INFRAESTRUCTURA SOBERANA");
-    console.log("Desplegando con la cuenta:", deployer.address);
-    console.log("====================================================");
+    // 1. Desplegar CosmicQuantumNucleus (El motor unificado)
+    // Este contrato reemplaza a los individuales para evitar conflictos de fusión.
+    const Nucleus = await ethers.getContractFactory("CosmicQuantumNucleus");
+    const nucleus = await Nucleus.deploy();
+    
+    // Bloqueo de sincronización: Esperamos a que el contrato esté en la cadena
+    await nucleus.waitForDeployment(); 
 
-    // 1. Desplegar CosmicRouteQuantumAlpha (Intercambio sin gas + Vault)
-    // Este contrato actúa como el núcleo de liquidez y certificación
-    console.log("1. Desplegando CosmicRouteQuantumAlpha...");
-    const CosmicRoute = await ethers.getContractFactory("CosmicRouteQuantumAlpha");
-    const cosmicRoute = await CosmicRoute.deploy();
-    await cosmicRoute.waitForDeployment(); // Corrección para versiones recientes de ethers
+    const nucleusAddress = await nucleus.getAddress();
 
-    const cosmicRouteAddress = await cosmicRoute.getAddress();
-    console.log("✅ CosmicRoute desplegado en:", cosmicRouteAddress);
+    console.log("✅ NÚCLEO DESPLEGADO EN:", nucleusAddress);
     console.log("Estado: OPERATIVO - Operador: carlin-moker");
-
-    // 2. Desplegar CosmicHydraQuantumNFT (Legado y Activos)
-    // Integra la lógica de las 34 Morenas y el blindaje de activos
-    console.log("\n2. Desplegando CosmicHydraQuantumNFT...");
-    const HydraNFT = await ethers.getContractFactory("CosmicHydraQuantumNFT");
-    const hydraNFT = await HydraNFT.deploy();
-    await hydraNFT.waitForDeployment();
-
-    const hydraNFTAddress = await hydraNFT.getAddress();
-    console.log("✅ HydraNFT desplegado en:", hydraNFTAddress);
-    console.log("Estado: OPERATIVO - Frecuencia: Red 62");
-
-    console.log("\n====================================================");
-    console.log("FUSIÓN COMPLETADA EXITOSAMENTE");
-    console.log("Infraestructura lista para protección del linaje.");
-    console.log("====================================================");
+    console.log("Frecuencia: Red 62 - Blindaje Metacuántico Activo");
+    console.log("--------------------------------------------------");
 }
 
 main()
     .then(() => process.exit(0))
     .catch((error) => {
-        console.error("\n❌ Error en el despliegue:");
+        console.error("❌ ERROR EN EL BLOQUEO:");
         console.error(error);
         process.exit(1);
     });
