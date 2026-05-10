@@ -1,31 +1,118 @@
-name: Red 62 - Validación de Infraestructura
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+// SPDX-License-Identifier: PROPIEDAD_PROHIBIDA
+// Cosmicjuan.blockchain - Infraestructura Red 62
+// Validación EIP-712 - Blindaje Metacuántico - Sin Gas
 
-jobs:
-  validate:
-    runs-on: ubuntu-latest
+pragma solidity ^0.8.20;
 
-    steps:
-      - name: Checkout del Repositorio
-        uses: actions/checkout@v4
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
+import "@openzeppelin/contracts/utils/cryptography/EIP712.sol";
 
-      - name: Configurar Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'npm'
+/**
+ * @title CosmicQuantumNucleus
+ * @dev El Men asume el control total. Fusión de blindaje y flujo gasless.
+ */
+contract CosmicQuantumNucleus is ERC721URIStorage, EIP712 {
+    using ECDSA for bytes32;
 
-      - name: Instalar Dependencias (Limpieza de Red)
-        run: npm ci
+    address public immutable OperadorAlpha;
+    uint256 private constant FACTOR_R62 = 0x62;
+    uint256 private _nextTokenId;
+    uint256 public cosmicPulse;
 
-      - name: Compilación de Contratos (Sello de Oro)
-        run: npx hardhat compile
+    struct Certificado {
+        string idLinaje;
+        uint256 tokenId;
+        uint256 fechaCreacion;
+        bool activo;
+    }
 
-      - name: Ejecutar Pruebas de Lógica Matemática
-        run: npx hardhat test
+    mapping(bytes32 => Certificado) public vault;
+    mapping(uint256 => bool) public usedNonces;
 
+    // Modificador de Soberanía Absoluta
+    modifier soloElMen() {
+        require(msg.sender == OperadorAlpha, "Bloqueo Absoluto: Solo el Men tiene acceso.");
+        _;
+    }
+
+    constructor() 
+        ERC721("CosmicJuan Legado", "CJL") 
+        EIP712("Red62_Sovereign", "1") 
+    {
+        OperadorAlpha = msg.sender;
+        cosmicPulse = block.timestamp;
+    }
+
+    /**
+     * @notice Genera un NFT de Legado (Sello de Oro) con validación matemática.
+     * @dev Lógica de la imagen 1000214786 evolucionada.
+     */
+    function sellarLegado(
+        address to, 
+        string memory uri, 
+        string memory _idLinaje
+    ) external soloElMen {
+        uint256 tokenId = _nextTokenId++;
+        
+        bytes32 idCripto = keccak256(abi.encodePacked(
+            _idLinaje, 
+            uri, 
+            tokenId, 
+            cosmicPulse,
+            FACTOR_R62
+        ));
+
+        _safeMint(to, tokenId);
+        _setTokenURI(tokenId, uri);
+
+        vault[idCripto] = Certificado({
+            idLinaje: _idLinaje,
+            tokenId: tokenId,
+            fechaCreacion: block.timestamp,
+            activo: true
+        });
+
+        // Evolución del pulso neurobiológico
+        cosmicPulse = uint256(idCripto);
+    }
+
+    /**
+     * @dev Validación EIP-712 para acciones autónomas sin gas.
+     * Permite que el ecosistema fluya bajo la firma del usuario.
+     */
+    function validarAccionSoberana(
+        address user,
+        uint256 accionId,
+        uint256 nonce,
+        bytes calldata signature
+    ) external view returns (bool) {
+        bytes32 structHash = _hashTypedDataV4(keccak256(abi.encode(
+            keccak256("AccionSoberana(address user,uint256 accionId,uint256 nonce)"),
+            user,
+            accionId,
+            nonce
+        )));
+
+        address signer = structHash.recover(signature);
+        return signer == user;
+    }
+
+    // Funciones de soporte técnico
+    function verificarLegado(bytes32 _id) external view returns (bool) {
+        return vault[_id].activo;
+    }
+
+    function _burn(uint256 tokenId) internal override(ERC721URIStorage) {
+        super._burn(tokenId);
+    }
+
+    function tokenURI(uint256 tokenId) public view override(ERC721URIStorage) returns (string memory) {
+        return super.tokenURI(tokenId);
+    }
+
+    function supportsInterface(bytes4 interfaceId) public view override(ERC721URIStorage) returns (bool) {
+        return super.supportsInterface(interfaceId);
+    }
+}
