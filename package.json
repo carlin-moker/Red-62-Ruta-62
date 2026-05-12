@@ -1,0 +1,17 @@
+{
+  "name": "red-62-cosmicgem",
+  "version": "1.0.0",
+  "description": "Ecosistema Biológico y Cuántico - Cosmicjuan.blockchain",
+  "main": "index.js",
+  "author": "Carlin-Moker",
+  "license": "Propiedad Prohibida",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.0",
+    "ethers": "^6.12.0"
+  }
+}
+
