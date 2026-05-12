@@ -1,4 +1,4 @@
-
+[![Red 62 - Validacion de Infraestructura](https://github.com/carlin-moker/hydraCore.sol/actions/workflows/main.yml/badge.svg)](https://github.com/carlin-moker/hydraCore.sol/actions/workflows/main.yml)
 carlin-moker-patch-1
 // SPDX-License-Identifier: PROPIEDAD_PROHIBIDA
 // Cosmicjuan.blockchain - Infraestructura Red 62
