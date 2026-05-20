@@ -311,4 +311,4 @@ npm start
 For issues and questions:
 - GitHub Issues: https://github.com/carlin-moker/Red-62-Ruta-62/issues
 - Security: See SECURITY.md
-- Email: carlingonzalez24819@gmail.com
+- Email: carlingonzalez24819@gmail.com 
