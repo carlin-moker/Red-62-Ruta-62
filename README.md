@@ -1,5 +1,5 @@
 [![Red 62 - Validacion de Infraestructura](https://github.com/carlin-moker/hydraCore.sol/actions/workflows/main.yml/badge.svg)](https://github.com/carlin-moker/hydraCore.sol/actions/workflows/main.yml)
-{
+
 # 🌌 Cosmicjuan.blockchain Ecosystem
 
 Proyecto soberano comandado por **carlin-moker**, nacido de la ruta y para la comunidad.  
