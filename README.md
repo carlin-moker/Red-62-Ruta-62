@@ -1,33 +1,26 @@
 [![Red 62 - Validacion de Infraestructura](https://github.com/carlin-moker/hydraCore.sol/actions/workflows/main.yml/badge.svg)](https://github.com/carlin-moker/hydraCore.sol/actions/workflows/main.yml)
-}
- * ECOSISTEMA COSMICJUAN.BLOCKCHAIN - NÚCLEO RED 62
- * Protocolo de Infraestructura Soberana y Despliegue Evolutivo
- * Propiedad Prohibida - Protección Divina Activa
-   {
-const { ethers } = require("hardhat");
+{
+# 🌌 Cosmicjuan.blockchain Ecosystem
 
-async function main() {
-  const [deployer] = await ethers.getSigners();
+Proyecto soberano comandado por **carlin-moker**, nacido de la ruta y para la comunidad.  
+Filosofía: **“Es nuestro, tuyo y mío”**.  
+Visión: Fusionar espiritualidad, soberanía y tecnología blockchain en una red modular única.
 
-  console.log("==================================================");
-  console.log("INICIANDO DESPLIEGUE EN RED 62: NÚCLEO SOBERANO");
-  console.log("Operador Criptofísico:", deployer.address);
-  console.log("Estatus: CONECTADO - Red: Red 62");
-  console.log("==================================================");
+---
 
-  try {
-    // 1. Despliegue de CosmicRoute (Intercambio Cuántico Independiente)
-    console.log("Desplegando CosmicRoute en el ecosistema Red 62...");
-    const CosmicRoute = await ethers.getContractFactory("CosmicRoute");
-    
-    // Configuración para Red 62 - Prioridad de Red Neuronal Propia
-    const cosmicRoute = await CosmicRoute.deploy();
+## 🚀 Nodo Maestro
+**💎 Red-62 CosmicGem**  
+Infraestructura soberana que conecta logística física con blockchain.  
+Es el corazón del ecosistema y coordina todos los nodos satélites.
 
-    // Sincronización Neuropinal con el Bloque Génesis de Red 62
-    await cosmicRoute.waitForDeployment();
-    const address = await cosmicRoute.getAddress();
+---
 
-    console.log("✅ CosmicRoute establecido en Red 62:", address);
-    console.log("Estado: OPERATIVO - Operador: carlin-moker");
-    console.log("Propósito: Magnate - Legado: Asegurado");
-    console.log("==================================================");
+## 🗺️ Nodos Satélites
+- **🌐 Cosmicjuan-Core** → NFTs y activos digitales.  
+- **🐉 HydraCore.sol** → Seguridad y validación de transacciones.  
+- **🧠 Sinergia-Neuronal** → Interconexión lógica, inteligencia colectiva.  
+- **🎨 Smart-Contract-ERC721** → Arte soberano y coleccionables únicos.  
+
+---
+
+## 🔑 Arquitectura Visual
