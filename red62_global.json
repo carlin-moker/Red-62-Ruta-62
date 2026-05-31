@@ -1,0 +1,16 @@
+{
+  "ecosistema": "Cosmicjuan.blockchain",
+  "status": "GLOBAL_GRID_ACTIVE",
+  "arquitectura": "Criptofisicomatematica_Cuantica_Hibrida",
+  "consenso": "Lógica_Neuro_Pineal_Lightweight",
+  "topologia": {
+    "alfa": "Nodo_Ancla_Global",
+    "beta": "Espejo_Sinergia_Hibrida",
+    "gamma": "Relayer_Carga_Divina"
+  },
+  "tokens": {
+    "red": "CJB",
+    "nativo": "CJ",
+    "liquidez": "CGL"
+  }
+}
