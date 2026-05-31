@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # --- Red 62 Infraestructura ---
 
 # Hardhat y Contratos (Crucial para no subir archivos basura)
@@ -38,3 +39,7 @@ thumbs.db
 =======
 .env
 >>>>>>> c3c9eaf724d3f050732ddbcb34b4a51a2732ae0e
+=======
+.env
+>>>>>>> a7213b6 (Soberanía técnica: Núcleo de seguridad y estructura src)
+node_modules/
