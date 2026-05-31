@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>NFT Soberano - Matriz Evolutiva Red 62</title>
+    <style>
+        body { margin: 0; background: #020813; overflow: hidden; font-family: monospace; }
+        canvas { display: block; width: 100vw; height: 100vh; }
+        .info { position: absolute; top: 10px; left: 10px; color: #00ffcc; font-size: 12px; line-height: 1.5; pointer-events: none; }
+    </style>
+</head>
+<body>
+    <div class="info">
+        ID: COSMICJUAN.BLOCKCHAIN<br>
+        ASSET: NFT_MATRIZ_EVOLUTIVA_01<br>
+        STATUS: AMARRE_CRIPTOCINETICO_OK<br>
+        PROTECCIÓN: DIVINA_ACTIVA
+    </div>
+    <canvas id="nftCanvas"></canvas>
+    <script>
+        const canvas = document.getElementById('nftCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let tiempo = 0;
+        let cajaAbierta = false;
+        let trailerX = canvas.width / 2;
+        let trailerY = canvas.height / 2;
+        let scale = 0.1;
+
+        function dibujarEntorno() {
+            // Fondo de rejilla matemática cuántica híbrida
+            ctx.fillStyle = 'rgba(2, 8, 19, 0.2)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.strokeStyle = '#002244';
+            ctx.lineWidth = 1;
+            for (let i = 0; i < canvas.width; i += 40) {
+                ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i, canvas.height); ctx.stroke();
+            }
+            for (let j = 0; j < canvas.height; j += 40) {
+                ctx.beginPath(); ctx.moveTo(0, j); ctx.lineTo(canvas.width, j); ctx.stroke();
+            }
+        }
+
+        function animar() {
+            dibujarEntorno();
+            tiempo += 0.02;
+            let cx = canvas.width / 2;
+            let cy = canvas.height / 2;
+
+            if (!cajaAbierta) {
+                // Dibujar caja contenedora IPFS con oscilación pineal
+                let desv = Math.sin(tiempo) * 10;
+                ctx.strokeStyle = '#00ffcc';
+                ctx.lineWidth = 3;
+                ctx.strokeRect(cx - 60, cy - 60 + desv, 120, 120);
+                
+                // Núcleo de energía interna
+                ctx.fillStyle = 'rgba(0, 255, 204, ' + (0.3 + Math.abs(Math.sin(tiempo) * 0.5)) + ')';
+                ctx.fillRect(cx - 40, cy - 40 + desv, 80, 80);
+
+                if (tiempo > 4) { cajaAbierta = true; tiempo = 0; }
+            } else {
+                // Efecto de apertura cuántica: destello expansivo
+                if (scale < 2.5) {
+                    ctx.strokeStyle = 'rgba(255, 255, 255, ' + (1 - scale/2.5) + ')';
+                    ctx.lineWidth = 10;
+                    ctx.strokeRect(cx - 60 * scale, cy - 60 * scale, 120 * scale, 120 * scale);
+                    scale += 0.04;
+                }
+
+                // Renderización geométrica del tráiler doblemente articulado saliendo de la matriz
+                ctx.save();
+                ctx.translate(cx, cy + (Math.sin(tiempo * 5) * 2)); // Vibración del motor diésel
+                ctx.scale(scale * 0.5, scale * 0.5);
+
+                // Cabina del Tráiler (Tractocamión)
+                ctx.fillStyle = '#ff3333';
+                ctx.fillRect(40, -30, 50, 40); // Camote / Cofre
+                ctx.fillStyle = '#ffffff';
+                ctx.fillRect(10, -45, 45, 55); // Dormitorio y cabina principal
+                ctx.fillStyle = '#00ffcc';
+                ctx.fillRect(45, -35, 10, 15);  // Parabrisas / Ventana
+
+                // Primer Tanque Articulado (Semirremolque 1)
+                ctx.fillStyle = '#aaaaaa';
+                ctx.fillRect(-80, -40, 80, 40);
+
+                // Segundo Tanque Articulado (Semirremolque 2 - Full)
+                ctx.fillStyle = '#999999';
+                ctx.fillRect(-180, -40, 80, 40);
+
+                // Mecanismo de acoplamiento (Dolly y conexiones físicas)
+                ctx.strokeStyle = '#ffffff';
+                ctx.lineWidth = 4;
+                ctx.beginPath(); ctx.moveTo(0, -10); ctx.lineTo(10, -10); ctx.stroke();
+                ctx.beginPath(); ctx.moveTo(-100, -10); ctx.lineTo(-80, -10); ctx.stroke();
+
+                // Ejes de llantas del conjunto completo
+                ctx.fillStyle = '#000000';
+                let ruedasX = [-170, -140, -110, -70, -40, -10, 20, 45];
+                ruedasX.forEach(rx => {
+                    ctx.beginPath(); ctx.arc(rx, 5, 10, 0, Math.PI * 2); ctx.fill();
+                    ctx.fillStyle = '#ffffff';
+                    ctx.beginPath(); ctx.arc(rx, 5, 3, 0, Math.PI * 2); ctx.fill();
+                    ctx.fillStyle = '#000000';
+                });
+
+                ctx.restore();
+
+                // Reiniciar ciclo de la animación
+                if (scale >= 2.5 && tiempo > 3) {
+                    cajaAbierta = false;
+                    scale = 0.1;
+                    tiempo = 0;
+                }
+            }
+            requestAnimationFrame(animar);
+        }
+        animar();
+    </script>
+</body>
+</html>
