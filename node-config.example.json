@@ -1,0 +1,46 @@
+{
+  "network": {
+    "name": "CosmicGemLogistic Red 62",
+    "chainId": 62,
+    "networkId": "red-62-cosmic-gem",
+    "version": "1.0.0"
+  },
+  "rpc": {
+    "port": 8545,
+    "endpoints": [
+      "http://localhost:8545",
+      "http://node1.red62.local:8545",
+      "http://node2.red62.local:8545"
+    ]
+  },
+  "peerDiscovery": {
+    "enabled": true,
+    "seeds": [
+      "seed1.red62.local",
+      "seed2.red62.local"
+    ],
+    "port": 30303
+  },
+  "consensus": {
+    "type": "PoS",
+    "validators": [
+      "validator1.red62.local",
+      "validator2.red62.local"
+    ],
+    "blockTime": 12,
+    "epoch": 225
+  },
+  "credentials": {
+    "username": "${RPC_USERNAME}",
+    "password": "${RPC_PASSWORD}",
+    "apiKey": "${API_KEY}"
+  },
+  "database": {
+    "path": "./data",
+    "type": "leveldb"
+  },
+  "logging": {
+    "level": "info",
+    "format": "json"
+  }
+}

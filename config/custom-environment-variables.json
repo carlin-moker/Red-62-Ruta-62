@@ -1,0 +1,8 @@
+{
+  "Network": {
+    "slashingEnabled": "VALIDATOR_SLASHING_ENABLED",
+    "slashingRate": "SLASHING_RATE",
+    "peerThreshold": "MAX_PEER_SCORE_THRESHOLD",
+    "ddosProtection": "ENABLE_DDOS_PROTECTION"
+  }
+}

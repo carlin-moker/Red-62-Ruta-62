@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # --- Red 62 Infraestructura ---
 
 # Hardhat y Contratos (Crucial para no subir archivos basura)
@@ -34,3 +35,6 @@ yarn-error.log*
 .idea/
 .DS_Store
 thumbs.db
+=======
+.env
+>>>>>>> c3c9eaf724d3f050732ddbcb34b4a51a2732ae0e
