@@ -1,0 +1,9 @@
+{
+  "nodo_emisor": "Cosmicjuan_Core",
+  "activos_vinculados": {
+    "monedas": ["CJ", "CGL"],
+    "red": "CJB",
+    "nfts": "Matriz_Evolutiva_Nativa"
+  },
+  "privacidad": "Protección_Divina_Activa"
+}
