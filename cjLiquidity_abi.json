@@ -1,0 +1,201 @@
+[
+  {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "idActivo",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "tipoActivo",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "valorMatematico",
+        "type": "uint256"
+      }
+    ],
+    "name": "ActivoConsolidado",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "desde",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "hacia",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "cantidad",
+        "type": "uint256"
+      }
+    ],
+    "name": "TransferenciaNativa",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "TICKER_NATIVO",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "balancesNativos",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_idActivo",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "_tipoActivo",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_valor",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "_ipfsMetadata",
+        "type": "string"
+      }
+    ],
+    "name": "consolidarActivo",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_idActivo",
+        "type": "uint256"
+      }
+    ],
+    "name": "consultarActivo",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "tipoActivo",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "valorMatematico",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "ipfsMetadata",
+        "type": "string"
+      },
+      {
+        "internalType": "bool",
+        "name": "verificado",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "totalSuministroActivos",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_hacia",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_cantidad",
+        "type": "uint256"
+      }
+    ],
+    "name": "transferirActivoNativo",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

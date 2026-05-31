@@ -1,43 +1,9 @@
 {
-<<<<<<< HEAD
-  "name": "red-62-cosmicgem",
+  "name": "red-62-ruta-62",
   "version": "1.0.0",
-  "description": "Ecosistema Biológico y Cuántico - Cosmicjuan.blockchain",
-  "main": "index.js",
-  "author": "Carlin-Moker",
-  "license": "Propiedad Prohibida",
-  "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
-    "hardhat": "^2.22.0"
-  },
+  "description": "Ecosistema independiente Cosmicjuan.blockchain",
+  "main": "compilar_trinidad.js",
   "dependencies": {
-    "@openzeppelin/contracts": "^5.0.0",
-    "ethers": "^6.12.0"
+    "solc": "0.8.20"
   }
 }
-
-=======
-  "name": "red-62-cosmicgemlogistic",
-  "version": "1.0.0",
-  "description": "Red 62 - CosmicGemLogistic Independent Blockchain Network",
-  "main": "src/index.js",
-  "type": "module",
-  "scripts": {
-    "start": "node src/index.js",
-    "start:full": "NODE_TYPE=full node src/index.js",
-    "start:validator": "NODE_TYPE=validator node src/index.js --validator",
-    "dev": "nodemon src/index.js"
-  },
-  "author": "CosmicGemLogistic Team",
-  "license": "MIT",
-  "dependencies": {
-    "chalk": "^5.6.2",
-    "dotenv": "^16.6.1",
-    "ethers": "^6.0.0",
-    "express": "^4.18.2",
-    "uuid": "^14.0.0",
-    "winston": "^3.8.0",
-    "ws": "^8.20.0"
-  }
-}
->>>>>>> c3c9eaf724d3f050732ddbcb34b4a51a2732ae0e

@@ -1,0 +1,204 @@
+[
+  {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "idPaquete",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "receptor",
+        "type": "address"
+      }
+    ],
+    "name": "CargaProcesada",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "idPaquete",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "emisor",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "tipoCarga",
+        "type": "string"
+      }
+    ],
+    "name": "CargaTransmitida",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "dispositivo",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "estado",
+        "type": "bool"
+      }
+    ],
+    "name": "DispositivoModificado",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_dispositivo",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "_estado",
+        "type": "bool"
+      }
+    ],
+    "name": "administrarDispositivo",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_idPaquete",
+        "type": "uint256"
+      }
+    ],
+    "name": "consultarCarga",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "tipoCarga",
+        "type": "string"
+      },
+      {
+        "internalType": "bytes",
+        "name": "datosCifrados",
+        "type": "bytes"
+      },
+      {
+        "internalType": "uint256",
+        "name": "bloqueRegistro",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "procesado",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "dispositivosAutorizados",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_idPaquete",
+        "type": "uint256"
+      }
+    ],
+    "name": "procesarCarga",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "totalPaquetes",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_tipoCarga",
+        "type": "string"
+      },
+      {
+        "internalType": "bytes",
+        "name": "_datos",
+        "type": "bytes"
+      }
+    ],
+    "name": "transmitirCarga",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
