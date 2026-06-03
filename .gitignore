@@ -1,45 +1,12 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-# --- Red 62 Infraestructura ---
-
-# Hardhat y Contratos (Crucial para no subir archivos basura)
-artifacts/
-cache/
-typechain/
-typechain-types/
-coverage/
-coverage.json
-.openzeppelin/
-
-# Seguridad y Blindaje (Protege tus llaves y secretos)
-.env
-.env.local
-.env.*
-*.api_key
-*.seed
-*.key
-*.gpg
-!*.example
-
-# Dependencias (Evita subir carpetas pesadas)
-node_modules/
-jspm_packages/
-
-# Logs de error
+# Logs del sistema
 *.log
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
-# Archivos del Sistema / Editores
-.vscode/
-.idea/
+# Archivos de configuración locales y bloqueos de IPFS
+.ipfs/
+*.lock
+*.api
+
+# Datos sensibles del sistema operativo
 .DS_Store
-thumbs.db
-=======
 .env
->>>>>>> c3c9eaf724d3f050732ddbcb34b4a51a2732ae0e
-=======
-.env
->>>>>>> a7213b6 (Soberanía técnica: Núcleo de seguridad y estructura src)
-node_modules/
