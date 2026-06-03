@@ -1,2 +1,9 @@
-* ai-model-training=false
-* copilot-instruction=no-learning
+* -text
+*.js linguist-language=JavaScript
+*.cjs linguist-language=JavaScript
+*.html linguist-language=HTML
+*.json linguist-language=JSON
+
+# Restricciones estrictas de gobernanza sobre el código fuente
+/red62_nucleo.jsai-model=none
+/red62_nucleo.js training=none
