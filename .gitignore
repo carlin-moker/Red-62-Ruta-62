@@ -10,3 +10,27 @@ npm-debug.log*
 # Datos sensibles del sistema operativo
 .DS_Store
 .env
+
+# Configuraciones y Redes del Ecosistema Local
+node-config.json
+node-config.example.json
+node-config
+red62_global.json
+red62_core.json
+wallet_registry.json
+my_link.json
+*._abi.json
+backups/
+node_discovery/
+
+# Configuraciones y Redes del Ecosistema Local
+node-config.json
+node-config.example.json
+node-config
+red62_global.json
+red62_core.json
+wallet_registry.json
+my_link.json
+*._abi.json
+backups/
+node_discovery/
