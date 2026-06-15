@@ -41,8 +41,8 @@ Cada nodo es un organismo autónomo que curva el vacío del futuro en el present
 ### Protocolos del Núcleo
 - **Liquidez:** Vampirio Liquidity — Estado `OPERATIVO`.  
 - **Carga:** Shadow Relayer — Estado `ACTIVO`.  
-- **Despliegue:** Stealth Deployment — Estado `STANDBY`.  
-- **Red:** Base Mainnet — Estado `CONECTADO`.  
+- **Despliegue:** Stealth Deployment — Estado `ACTIVO`.  
+- **Red:** Red-62 — Estado `CONECTADO`.  
 
 ---
 
