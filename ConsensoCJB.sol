@@ -1,20 +1,14 @@
 // SPDX-License-Identifier: CosmicGlobal-Sovereign
 pragma solidity ^0.8.20;
 
-/**
- * @title ConsensoCJB
- * @dev Contrato de consenso de bloques locales en Red-62
- * Token nativo: CJB
- */
-
 contract ConsensoCJB {
     address public propietario;
     uint256 public bloquesValidados;
 
-    event BloqueValidado(uint256 id, address validador);
+    event BloqueValidado(uint256 indexed id, address indexed validator);
 
     modifier soloPropietario() {
-        require(msg.sender == propietario, "Solo el propietario puede ejecutar esta accion");
+        require(msg.sender == propietario, "Acceso restringido: Solo el propietario");
         _;
     }
 
