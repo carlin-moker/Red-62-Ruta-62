@@ -9,7 +9,7 @@ class CosmicHandler(http.server.SimpleHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-type", "application/json")
         self.end_headers()
-        metrics = {"status": "OPERATIVO", "nodo": "CosmicGem-Principal", "red": "Base Mainnet"}
+        metrics = {"status": "OPERATIVO", "nodo": "CosmicGem-Principal", "Red": "Red-62"}
         self.wfile.write(json.dumps(metrics).encode())
 
 if __name__ == "__main__":
