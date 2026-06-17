@@ -16,4 +16,4 @@ if __name__ == "__main__":
     with socketserver.TCPServer(("", PORT), CosmicHandler) as server:
         print(f"🌍 CosmicGem activo en puerto {PORT}")
         server.serve_forever()
-
+ 
